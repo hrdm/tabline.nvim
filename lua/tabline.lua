@@ -38,7 +38,7 @@ function M.tab_label(n)
 	local buf = vim.api.nvim_win_get_buf(win)
 	local name = vim.api.nvim_buf_get_name(buf)
 	local label = vim.fn.fnamemodify(name, ":t")
-	return label == "" and "[No Name]" or label
+	return label == "" and "  " or label
 end
 
 function M.tab_modified(n)
