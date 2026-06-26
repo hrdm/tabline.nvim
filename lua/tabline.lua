@@ -12,7 +12,7 @@ function M.tabline()
 		s = s .. " " .. M.tab_label(i)
 
 		s = s .. (is_current and "%#TabLineSelMod#" or "%#TabLineMod#")
-		s = s .. "%" .. i .. "T " .. M.tab_modified(i)
+		s = s .. "%" .. i .. "T" .. M.tab_modified(i)
 
 		if is_current then
 			s = s .. "%#TabLineSep#"
@@ -45,7 +45,7 @@ function M.tab_modified(n)
 	local wins = vim.api.nvim_tabpage_list_wins(vim.api.nvim_list_tabpages()[n])
 	local win = wins[1]
 	local buf = vim.api.nvim_win_get_buf(win)
-	return vim.bo[buf].modified and "⏺" or ""
+	return vim.bo[buf].modified and " ⏺" or "  "
 end
 
 return M
